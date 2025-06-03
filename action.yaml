@@ -1,0 +1,18 @@
+name: "Podcast Generator"
+author: "Alex Fes"
+description: "Generates a podcast episode based on a given topic."
+runs:
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: "git-branch"
+  color: "red"
+inputs:
+  email:
+    description: "Email address to send the podcast episode to."
+    required: true
+    default: ${{ github.actor }}@users.noreply.github.com
+  name:
+    description: "Name of the podcast episode."
+    required: true
+    default: ${{ github.actor }}-podcast
